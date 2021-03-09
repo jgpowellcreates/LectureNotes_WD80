@@ -1,0 +1,34 @@
+#parentBorder {
+    border: 10px solid black;    
+    border-radius: 30px;
+    background-color: grey;
+    /* display: flex; */
+}
+
+h1 {
+    color:lightgreen;
+    text-align: center;
+}
+
+h3 {
+    color:blue;
+}
+
+p  {
+    color:red;
+}
+
+.truthLie {
+    border-radius: 18px;
+    border: 2px dotted red;
+    background-color: lightgrey;
+    text-align: center;
+    /* width:30%;
+    flex: 1;
+    padding:15px; */
+}
+
+#align {
+    display: flex;
+    justify-content:space-evenly;
+}

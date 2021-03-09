@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+</head>
+<body>
+    <h1>The Console</h1>
+    <ul>
+        <li>Humans make errors. Gasp!</li>
+        <li>The browser is the home of the console</li>
+        <li>The Console Object</li>
+            <ul>
+                <li>console.log()</li>
+                <li>console.warn()</li> <!-- the parentheses indicate these are "methods"-->
+                <li>console.error()</li> <!-- console logs are for developmental purposes! They give you feedback on the JS -->
+            </ul>
+        <li>The console is used for debugging purposes ONLY</li>
+    </ul>
+    <script> 
+        console.log("This message is a string");
+
+        let name = "Jacob Powell";
+        console.log(name);
+
+        //console.warn
+        console.warn("This is a warning");
+
+        let warning = "Uh Oh!";
+        console.warn(warning);
+
+        //console.error  --does not prevent the code from executing
+        console.error("This is an error message");
+
+        let error = "This looks real bad!";
+        console.error(error);
+
+    </script> <!--using this tag, we can code JS directly into our HTML!-->
+</body>
+</html>

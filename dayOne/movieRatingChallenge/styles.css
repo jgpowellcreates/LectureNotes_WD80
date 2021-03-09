@@ -1,0 +1,17 @@
+table {
+    background: lightskyblue;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.movies {
+    margin: auto;
+}
+
+.movies h2 {
+    text-align: center;
+}
+
+.title {
+    font-style: italic;
+}
