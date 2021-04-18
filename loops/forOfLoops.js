@@ -25,3 +25,8 @@ for (let stud of student) {
 
 //for of loops are best used on arrays        (cannot use on objects - their keys are not iterable)
 //for in loops are best used on objects       (can count arrays. counts indeces as keys)
+
+
+
+//enumerable - objects have properties we can count (specific number of items)
+//iterable - it has an actual index. There is ALREADY a number attached to each property

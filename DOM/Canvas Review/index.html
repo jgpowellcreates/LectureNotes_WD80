@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <p id="testParagraph">sample text</p>
+    <p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
+
+    <button id="clickThisButton">I want to be clicked</button>
+
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="John Smith" />
+
+    <p>Welcome!</p>
+    <p>No name has been entered</p>
+
+    <!-- JavaScript Code Below -->
+
+    <script type="text/javascript">
+    document.getElementById('testParagraph').style.color = "blue";
+                // we don't have to set the value. We can choose to just return it
+    console.log(document.getElementById("testParagraph").style.color);
+
+    //The 2 most common ways to select an element are:
+    // document.getElementById("idHere")
+    // document.querySelectorAll("p.classNameHere")  - uses CSS-style selectors and returns a pseudo array-like list of matching elements called a 'Node List'
+
+    console.log(document.querySelectorAll("p.sampleClass"));
+
+    //style is a common property to change     another useful one:
+    //innerText and innerHTML
+
+    document.querySelectorAll("p.sampleClass")[0].innerText = "My text was changed!";
+
+    //innerText - only references the text displayed on the screen
+    //innerHTML will refernce all HTML elements inside the tag
+
+    console.log(document.querySelectorAll("p.sampleClass"));
+    document.querySelectorAll("p.sampleClass")[0].innerHTML = "<span>I am a whole new element!</span>"; //if you look at the Elements in the DOM, you'll see a Span element has been added to the HTML inside the existing paragraph tag
+
+    //document.querySelectorAll("p.sampleClass")[0].innerHTML = "";
+    // here we remove an element by leaving the innerHTML blank
+
+
+    /* We can make things happen when we want by using "events" that signal functions to run. Common events are:
+    mouse clicks, key presses, browser resizing, hovering, submitting a form, etc.
+    
+    SYNTAX for an EVENT
+    document.getElementById('clickThisButton').addEventListener('click', function)
+    */
+
+    document.getElementById("clickThisButton").addEventListener("click", () => {
+        console.log("I was clicked!");
+    });
+    document.getElementById("clickThisButton").addEventListener("click", (details) => {
+        console.log(details);
+    });
+
+    document.getElementById("clickThisButton").addEventListener("click", (details) => {
+        details.target.style.backgroundColor = 'red';
+    })
+
+    /*document.getElementById("nameInput").addEventListener("keyup", (event) => {
+        console.log(event);
+    })*/
+
+    document.getElementById("nameInput").addEventListener("keyup", (event) => {
+        console.log(event.target.value);
+        if (event.target.value === "") {
+            document.getElementsByTagName("p")[3].innerText = "No name has been entered";
+        } else {
+        document.getElementsByTagName("p")[3].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+        }
+    });
+
+
+    </script>
+</body>
+</html>
